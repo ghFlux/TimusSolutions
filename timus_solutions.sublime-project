@@ -1,0 +1,37 @@
+{
+	"build_systems":
+	[
+		{
+			"file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
+			"name": "Python",
+			"selector": "source.python",
+			"shell_cmd": "\"python\" -u \"$file\""
+		},
+		{
+			"name": "Python REPL",
+			"target": "chain",
+			"commands":
+			[
+				[
+					"run_existing_window_command",
+					{
+						"file": "config/Python/Main.sublime-menu",
+						"id": "repl_python_run"
+					}
+				],
+				[
+					"move_to_group", { "group": 2 }
+				],
+				[
+					"focus_group", { "group": 2 }	
+				],
+			]
+		}		
+	],
+	"folders":
+	[
+		{
+			"path": "."
+		}
+	]
+}
